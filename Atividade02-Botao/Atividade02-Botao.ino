@@ -1,15 +1,16 @@
 int buttonVal;
 
 void setup() {
+  pinMode(13, OUTPUT);
   pinMode(2, INPUT_PULLUP);
 }
 
 void loop() {
   buttonVal = digitalRead(2);
   if(buttonVal == HIGH) {
-    // se não estiver pressionado
+    digitalWrite(13, LOW);
   } else {
-    // se estiver pressionado
+    digitalWrite(13, HIGH);
   }
   delay(100);
 }
